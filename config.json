@@ -1,0 +1,11 @@
+{
+    "discord_webhook_url": "",
+    "line_messaging_channel_access_token": "",
+    "line_messaging_message_to": "",
+    "line_notify_token": "",
+    "db_username": "",
+    "db_passwd": "",
+    "db_name": "",
+    "db_host": "",
+    "db_port": "3306"
+}
