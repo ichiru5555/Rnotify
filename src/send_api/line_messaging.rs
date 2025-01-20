@@ -1,16 +1,17 @@
 use std::env;
 
-use reqwest::header::{HeaderMap, HeaderValue};
+use reqwest::header::{HeaderMap, HeaderValue, AUTHORIZATION, CONTENT_TYPE};
 use reqwest::Client;
 use serde_json::json;
 use uuid::Uuid;
 
+//未テスト
 pub async fn send(title: &str, content: &str) {
     let uuid = Uuid::new_v4();
     let mut headers= HeaderMap::new();
-    headers.insert("Content-Type", HeaderValue::from_static("application/json"));
+    headers.insert(CONTENT_TYPE, HeaderValue::from_static("application/json"));
     headers.insert(
-        "Authorization",
+        AUTHORIZATION,
         HeaderValue::from_str(
             &format!("Bearer {}",
             env::var("line_messaging_channel_access_token").unwrap())
